@@ -5,7 +5,7 @@ import Lottie from "lottie-react";
 import animacionSkills from "../../../assets/iconos/animacionSkills.json"; // Animación Lottie
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaBootstrap, FaPython } from "react-icons/fa";
 import { SiFlask, SiStripe } from "react-icons/si";
-import gsapLogo from "../../../front/img/GSAP_2023.png";
+
 
 export const Skills = () => {
   const refTitulo = useRef(null);
