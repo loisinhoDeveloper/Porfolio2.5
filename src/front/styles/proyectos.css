@@ -1,105 +1,138 @@
+/* Asegurémonos de que las imágenes circulares sean responsivas */
 .imagenProyectos {
-    width: 200px;
-    height: 170px;
-    object-fit: cover;
-    border-radius: 50%; /* Hace la imagen ovalada */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    
-  }
-  
-  /* .imagenProyectos:hover { estás utilizando una transición de escala en las imágenes también, pero lo hará GSAP
-    transform: scale(1.1);
-  } */
-  
-  .carousel-item {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .proyectos-section {
-    font-family: 'Poppins', sans-serif;
-    padding: 50px 20px;
-    background-color: #08090A;
-    color: #66D7D1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  .proyectos-section h2 {
-    font-size: 76.8px;
-    margin-bottom: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    
-  }
-  
-  /* .proyectos-section h2:hover { Al utilizar GSAP, no se utiliza asi.
-    transform: scale(1.1);
-  } */
+  width: 100%; /* Hace que la imagen ocupe el 100% del ancho del contenedor */
+  max-width: 200px; /* Limita el tamaño máximo de la imagen */
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: cover; 
+  border-radius: 50%; /* Hace la imagen circular */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  background-color: #DA4167; /* Color de fondo en caso de no haber imagen */
+}
 
-  .proyectos-section h2:hover {
-    color: #FF99B2; /* Cambio de color suave */
-  }
-  
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    filter: invert(1); /* Cambia el color de las flechas a blanco */
-  }
-  
-  .misProyectos {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Card Container */
+/* Si la imagen no tiene contenido (src vacío o no existe) */
+.imagenProyectos:empty {
+  background-color: #B0B0B0; /* Fondo gris cuando no haya imagen */
+  border-radius: 50%; /* Sigue siendo circular */
+}
+
+/* Estilos para el Carousel */
+.carousel-item {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.proyectos-section {
+  font-family: 'Poppins', sans-serif;
+  padding: 50px 20px;
+  background-color: #08090A;
+  color: #66D7D1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.proyectos-section h2 {
+  font-size: 5vw; /* Ajuste dinámico según el ancho de la pantalla */
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Ajustes responsivos para las tarjetas */
+.misProyectos {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+/* Card Container */
 .cardProyectos {
-    text-align: center;
-    max-width: 250px; /* Define un ancho máximo para que todas las cards sean uniformes */
-    word-wrap: break-word; /* Asegura que el texto no salga de los límites */
+  text-align: center;
+  max-width: 250px; /* Máximo ancho */
+  width: 100%; /* Hace que la tarjeta se adapte a pantallas pequeñas */
+  box-sizing: border-box; /* Asegura que el padding se considere en el tamaño total */
+  margin: 10px;
+}
+
+/* Estilo para el título del proyecto */
+.cardProyectos h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #DA4167;
+  margin: 10px 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Estilo para la descripción */
+.cardProyectos p {
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 1.5;
+  margin: 0 0 10px;
+  text-align: justify;
+  max-height: 3em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Estilo para los botones */
+.cardProyectos .btn-primary {
+  background-color: #DA4167;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.cardProyectos .btn-primary:hover {
+  background-color: #F76C8A;
+}
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .proyectos-section h2 {
+    font-size: 6vw; /* Reduce el tamaño de la fuente para pantallas pequeñas */
   }
-  
-  /* Título del proyecto */
-  .cardProyectos h3 {
-    font-size: 18px; /* Ajusta el tamaño del texto */
-    font-weight: bold; /* Asegura un título destacado */
-    color: #DA4167; /* Define un color adecuado */
-    margin: 10px 0; /* Espaciado vertical */
-    text-overflow: ellipsis; /* Muestra "..." si el texto es muy largo */
-    white-space: nowrap; /* No permite saltos de línea */
-    overflow: hidden; /* Oculta el texto que desborda */
+
+  .misProyectos {
+    gap: 10px; /* Reduce el espacio entre las tarjetas */
   }
-  
-  /* Descripción del proyecto */
-  .cardProyectos p {
-    font-size: 14px; /* Tamaño del texto */
-    color: #ffffff; /* Color del texto */
-    line-height: 1.5; /* Mejora la legibilidad */
-    margin: 0 0 10px; /* Espaciado vertical */
-    text-align: justify; /* Alinea el texto para una mejor presentación */
-    max-height: 3em; /* Limita la altura a dos líneas de texto */
-    overflow: hidden; /* Oculta el exceso de texto */
-    text-overflow: ellipsis; /* Agrega "..." para texto largo */
+
+  .cardProyectos {
+    max-width: 100%; /* Las tarjetas ocupan todo el ancho en pantallas pequeñas */
   }
-  
-  /* Botón */
-  .cardProyectos .btn-primary {
-    background-color: #DA4167; /* Color del botón */
-    border: none;
-    padding: 10px 15px; /* Tamaño del botón */
-    font-size: 14px;
-    transition: background-color 0.3s ease;
+
+  .imagenProyectos {
+    max-width: 150px; /* Las imágenes se hacen más pequeñas */
+    height: auto; /* Mantiene la proporción */
   }
-  
-  .cardProyectos .btn-primary:hover {
-    background-color: #F76C8A; /* Color al pasar el ratón */
+}
+
+@media (max-width: 480px) {
+  .proyectos-section h2 {
+    font-size: 8vw; /* Ajusta más el tamaño del título en pantallas extra pequeñas */
   }
-  
+
+  .misProyectos {
+    gap: 5px; /* Reduce aún más el espacio en pantallas muy pequeñas */
+  }
+
+  .cardProyectos {
+    width: 100%; /* Asegura que las tarjetas usen el 100% del ancho */
+  }
+
+  .imagenProyectos {
+    max-width: 120px; /* Ajusta aún más el tamaño de las imágenes */
+  }
+}

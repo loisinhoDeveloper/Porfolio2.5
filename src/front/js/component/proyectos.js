@@ -5,6 +5,8 @@ import Lottie from 'lottie-react';
 import animacionProyecto from "../../../assets/iconos/repositorio.json";
 import { gsap } from "gsap";
 import veteranos from "../../../front/img/valdovinoVeteranos.jpg";
+import ValdoDanzas from "../../../front/img/valdoDanzas.png";
+import Miolos from "../../../front/img/miolos.jpeg";
 
 
 export const Proyectos = () => {
@@ -13,15 +15,15 @@ export const Proyectos = () => {
 
   const proyectos = [
     {
-      titulo: "API de Notas",
+      titulo: "Miolos",
       descripcion: "Una API REST para gestionar notas de forma sencilla.",
-      imagen: "https://via.placeholder.com/300x200",
+      imagen: Miolos,
       link: "https://github.com/tu-repo/api-notas",
     },
     {
-      titulo: "Saltareiras do Mundo",
+      titulo: "ValdoDanzas",
       descripcion: " Un espazo onde a paixón polas danzas e culturas do mundo cobra vida.",
-      imagen: "https://via.placeholder.com/300x200",
+      imagen: ValdoDanzas,
       link: "https://github.com/tu-repo/portfolio",
     },
     {
@@ -63,12 +65,13 @@ export const Proyectos = () => {
         <Lottie animationData={animacionProyecto} style={{ width: "70px", height: "90px" }} />
         Proyectos
       </h2>
-      {proyectos.length > 3 ? (
+      {proyectos.length > 3 ? ( //La condición para mostrar un Carousel o las tarjetas se basa en la longitud del array proyectos
         <Carousel>
           {proyectos.map((proyecto, index) => (
             <Carousel.Item key={index}>
               <div className="d-flex justify-content-center align-items-center flex-column">
-              <img className="d-block imagenProyectos" src={proyecto.imagen} alt={proyecto.titulo} onMouseEnter={() => animarImagen(index)} onMouseLeave={() => devolverImagen(index)} ref={(el) => refImagenes.current[index] = el}/>
+              <img className="d-block imagenProyectos" //Para que las imágenes sean circulares, utilizo la clase imagenProyectos que tengo abajo en las Cards.
+              src={proyecto.imagen} alt={proyecto.titulo} onMouseEnter={() => animarImagen(index)} onMouseLeave={() => devolverImagen(index)} ref={(el) => refImagenes.current[index] = el}/>
                 <div className="text-center mt-3">
                   <h3>{proyecto.titulo}</h3>
                   <p>{proyecto.descripcion}</p>
@@ -85,7 +88,7 @@ export const Proyectos = () => {
             </Carousel.Item>
           ))}
         </Carousel>
-      ) : (
+      ) : ( //Si tienes más de 3 proyectos, se muestra un Carousel; si no, se renderizan las tarjetas "cardProyectos"
         <div className="misProyectos">
           {proyectos.map((proyecto, index) => (
             <div key={index} className="cardProyectos">

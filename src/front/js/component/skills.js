@@ -23,9 +23,11 @@ export const Skills = () => {
 
 
  const refTitulo = useRef(null);
- const refIconos = skills.map(() => useRef(null)); // cada ícono tiene su propia referencia. 
-  //Al usar map() para crear una referencia (useRef(null)) para cada uno de los íconos que hay en el array skills
-
+ const refIconos = skills.map(() => useRef(null)); // useRef() permite acceder a los elementos directamente 
+ //método .map() recorre un array de habilidades (skills) e iconos.
+ // Cada vez que recore recorre un ítem en el array, se crea una nueva referencia utilizando useRef(null) y se almacena en el array refIconos
+ // es decir una referencia para cada habilidad.
+ 
   const animarTitulo = () => {
     gsap.to(refTitulo.current, { scale: 1.2, duration: 0.3 });
   };
