@@ -1,0 +1,124 @@
+.educacion-section {
+    font-family: 'Poppins', sans-serif;
+    padding: 50px 20px; /* Ajusta espacio arriba y abajo */
+    background-color: #08090A;
+    color: #66D7D1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px; /* Separación entre elementos dentro de la sección */
+  }
+  
+  .educacion-section h2 {
+    font-size: 76.8px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    
+  }
+  
+  .educacion-section h2:hover{
+    color: #FF99B2; /* Cambio de color suave */
+  }
+  
+  .timeline {
+    position: relative;
+    width: 80%;
+    margin: 50px 0;
+    padding: 20px 0;
+  }
+  
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #DA4167;
+    z-index: 0;
+  }
+  
+  .timeline-component {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Hito 1: Mover hacia arriba */
+  .timeline-left {
+    left: calc(50% - 41% - 21px); /* Alinea a la izquierda */
+    text-align: right;
+    top: 50px; /* Ajusta la altura */
+  }
+  
+  /* Hito 2: Mover hacia abajo */
+  .timeline-right {
+    left: calc(50% + 24px); /* Alinea a la derecha */
+    text-align: left;
+    top: 170px; /* Ajusta la altura */
+  }
+  
+  /* Hito 3: Mover hacia arriba */
+  .timeline-left-2 {
+    left: calc(50% - 41% - 20px); /* Alinea a la izquierda */
+    text-align: right;
+    top: 300px; /* Ajusta la altura */
+  }
+  
+  /* Hito 4: Mover hacia abajo */
+  .timeline-right-2 {
+    left: calc(50% + 24px); /* Alinea a la derecha */
+    text-align: left;
+    top: 410px; /* Ajusta la altura */
+  }
+  
+  
+  .timeline-middle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px; /* Ajusta la separación vertical entre círculos */
+    z-index: 1;
+  }
+  
+  .timeline-circle {
+    width: 20px;
+    height: 20px;
+    background-color: #DA4167;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+  }
+  
+  .timeline-circle:hover {
+    transform: scale(1.3);
+  }
+  
+  /* Asegura que el contenedor se vea cuando el círculo es activado */
+  .timeline-middle:hover + .timeline-component {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.05);
+  }
+  
+  .timeline-component h3 {
+    font-size: 20px;  /* Ajusta el tamaño que desees */
+    margin-bottom: 10px;
+  }
+  
+  .timeline-component p {
+    font-size: 16px;  /* Ajusta el tamaño que desees */
+    margin: 0;
+  }

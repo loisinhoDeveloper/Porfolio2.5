@@ -1,7 +1,111 @@
-/*
-    home.css: This website contains selectors only used in home.css
+body {
+    background-color: #08090A; /* Fondo oscuro en todo el body */
+    margin: 0; /* Aseguramos que no haya márgenes por defecto */
+    padding: 0; /* Aseguramos que no haya relleno por defecto */
+}
 
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
-*/
+/* Estilo para el contenedor principal */
+.intro {
+    display: flex;                  /* Usamos Flexbox para alinear los elementos */
+    justify-content: space-between;  /* Separa el texto a la izquierda y la imagen a la derecha */
+    align-items: center;             /* Centra verticalmente los elementos */
+    padding: 125px 20px 96px 172px;  /* Margen superior de 125px, margen izquierdo de 172px, margen derecho de 20px y margen inferior de 96px */
+    background-color: #08090A;       /* Fondo oscuro */
+    color: white;                    /* Color blanco para el texto */
+}
+
+/* Estilos para el bloque de texto */
+.intro-text {
+    max-width: 50%;                 /* El texto ocupa la mitad del espacio */
+    margin-right: 20px;             /* Espacio entre la imagen y el texto */
+}
+
+/* Estilo para el título principal */
+.intro h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 67.2px;
+    line-height: 67.2px;
+    text-align: left;
+    letter-spacing: normal;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el subtítulo */
+.intro h2 span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 33.6px;
+    line-height: normal;
+    text-align: left;
+    letter-spacing: normal;
+    color: #DA4167; /* Color del texto */
+    text-shadow: 0 0 10px rgba(218, 65, 103, 0.8), 0 0 15px rgba(218, 65, 103, 0.6); /* Efecto de sombra */
+}
+
+/* Estilo para los párrafos de introducción */
+.intro p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 19.2px;
+    line-height: 34.56px;
+    text-align: justify;
+    letter-spacing: normal;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Estilo para las etiquetas de texto especiales dentro de los párrafos */
+.intro p span {
+    color: #DA4167;
+    text-shadow: 0 0 10px rgba(218, 65, 103, 0.8), 0 0 15px rgba(218, 65, 103, 0.6);
+    font-family: 'Poppins', sans-serif;
+    font-size: 33.6px;
+}
+
+/* Estilo para los iconos de redes sociales */
+.social-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Estilo para los enlaces de los iconos */
+.social-icons a {
+    color: #DA4167; /* Color de los iconos */
+    font-size: 30px; /* Ajusta el tamaño del icono */
+    transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Añadimos transición para los efectos */
+}
+
+/* Efecto para los iconos al hacer hover */
+.social-icons a:hover {
+    color: #fff; /* Cambia el color a blanco al pasar el ratón */
+    transform: scale(1.2); /* Aumenta el tamaño de los iconos */
+    
+}
+
+/* Estilo para el botón de contacto */
+.contact-btn {
+    background-color: #66D7D1; /* Color de fondo */
+    color: white;
+    padding: 15px 20px; /* Tamaño del botón */
+    border: none;
+    border-radius: 50px; /* Hacemos el botón redondo */
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Añadimos transición para los efectos */
+}
+
+/* Efecto para el botón al hacer hover */
+.contact-btn:hover {
+    background-color: #50B6B0; /* Cambia el color de fondo al pasar el ratón */
+    transform: scale(1.1); /* Aumenta el tamaño del botón */
+    box-shadow: 0 0 15px rgba(102, 215, 209, 0.6); /* Agrega una sombra para dar un efecto de resplandor */
+}
+
+/* Estilo para la imagen de la intro */
+.intro-image img {
+    max-width: 80%; /* La imagen no debe exceder el tamaño de su contenedor */
+    height: auto;    /* Mantiene la proporción de la imagen */
+    border-radius: 50%; /* Si quieres hacerla redonda */
+    object-fit: cover; /* Asegura que la imagen se ajuste bien en su contenedor */
+}

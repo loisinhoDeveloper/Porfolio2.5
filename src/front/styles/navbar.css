@@ -1,0 +1,68 @@
+/* Estilo base para el navbar */
+
+.navbar {
+    background-color: #08090A; /* Fondo oscuro */
+    color: white;              /* Texto blanco */
+    padding: 10px 20px;        /* Espaciado alrededor */
+    display: flex;             /* Para alinear elementos de manera flexible */
+    justify-content: space-between; /* Distribuye el contenido (como el logo y los links) */
+    align-items: center;       /* Alinea verticalmente los elementos */
+    margin-left: 172px;        /* Margen izquierdo de 172px */
+    margin-right: 172px;       /* Margen derecho de 172px */
+  }
+  
+  /* Estilo para el título */
+  .navbar h1 {
+    margin: 0;                 /* Quitar márgenes por defecto */
+    transition: transform 0.3s ease; /* Transición suave al pasar el ratón */
+    font-family: 'Poppins', sans-serif; /* Fuente Poppins */
+    font-size: 33.6px;                 /* Tamaño del texto */
+  }
+  
+  /* Hacer que el .rr de lois.rr tenga color #DA4167 y aplicar el difuminado */
+  .navbar h1 span {
+    color: #DA4167;            /* Color para el .rr */
+    text-shadow: 0 0 10px rgba(218, 65, 103, 0.8), 0 0 15px rgba(218, 65, 103, 0.6); /* Efecto difuminado */
+  }
+  
+  /* Efecto al pasar el ratón por encima */
+  .navbar h1:hover {
+    transform: scale(1.1);     /* Aumentar el tamaño del texto al pasar el ratón */
+  }
+  
+  /* Estilo para los links, si agregas navegación */
+  .navbar a {
+    color: white;              /* Color de los enlaces */
+    text-decoration: none;     /* Quitar subrayado */
+    margin: 0 15px;            /* Espaciado entre los enlaces */
+    font-size: 18px;           /* Tamaño del texto */
+  }
+  
+  /* Estilo para los links dentro de linksHome */
+  .linksHome {
+    color: #66D7D1;            /* Color de texto de los links */
+    display: flex;             /* Utilizamos Flexbox para alinear los enlaces */
+    gap: 38px;                 /* Espaciado entre los enlaces */
+  }
+  
+  /* Añadir espacio de 401px entre el logo y los enlaces */
+  .navbar-link {
+    margin-right: 401px;       /* Añadir el margen entre el logo y el primer enlace */
+  }
+  
+  /* Estilo de los enlaces dentro de linksHome */
+  .linksHome a {
+    color: #66D7D1;            /* Color de los enlaces */
+    text-decoration: none;     /* Quitar subrayado */
+    margin: 0 15px;            /* Espaciado entre los enlaces */
+    font-size: 16px;           /* Tamaño del texto */
+    transition: transform 0.3s ease, color 0.3s ease; /* Transición suave para el zoom y el color */
+  }
+  
+  /* Efecto al pasar el ratón por encima de los links */
+  .linksHome a:hover {
+    transform: scale(1.1);     /* Hacer un pequeño zoom */
+    text-decoration: underline; /* Subrayar el texto */
+    color: #DA4167;            /* Asegurar que el color cambie */
+  }
+  

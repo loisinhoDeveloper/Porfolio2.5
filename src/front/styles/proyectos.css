@@ -1,0 +1,105 @@
+.imagenProyectos {
+    width: 200px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 50%; /* Hace la imagen ovalada */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    
+  }
+  
+  /* .imagenProyectos:hover { estás utilizando una transición de escala en las imágenes también, pero lo hará GSAP
+    transform: scale(1.1);
+  } */
+  
+  .carousel-item {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .proyectos-section {
+    font-family: 'Poppins', sans-serif;
+    padding: 50px 20px;
+    background-color: #08090A;
+    color: #66D7D1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .proyectos-section h2 {
+    font-size: 76.8px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    
+  }
+  
+  /* .proyectos-section h2:hover { Al utilizar GSAP, no se utiliza asi.
+    transform: scale(1.1);
+  } */
+
+  .proyectos-section h2:hover {
+    color: #FF99B2; /* Cambio de color suave */
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    filter: invert(1); /* Cambia el color de las flechas a blanco */
+  }
+  
+  .misProyectos {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Card Container */
+.cardProyectos {
+    text-align: center;
+    max-width: 250px; /* Define un ancho máximo para que todas las cards sean uniformes */
+    word-wrap: break-word; /* Asegura que el texto no salga de los límites */
+  }
+  
+  /* Título del proyecto */
+  .cardProyectos h3 {
+    font-size: 18px; /* Ajusta el tamaño del texto */
+    font-weight: bold; /* Asegura un título destacado */
+    color: #DA4167; /* Define un color adecuado */
+    margin: 10px 0; /* Espaciado vertical */
+    text-overflow: ellipsis; /* Muestra "..." si el texto es muy largo */
+    white-space: nowrap; /* No permite saltos de línea */
+    overflow: hidden; /* Oculta el texto que desborda */
+  }
+  
+  /* Descripción del proyecto */
+  .cardProyectos p {
+    font-size: 14px; /* Tamaño del texto */
+    color: #ffffff; /* Color del texto */
+    line-height: 1.5; /* Mejora la legibilidad */
+    margin: 0 0 10px; /* Espaciado vertical */
+    text-align: justify; /* Alinea el texto para una mejor presentación */
+    max-height: 3em; /* Limita la altura a dos líneas de texto */
+    overflow: hidden; /* Oculta el exceso de texto */
+    text-overflow: ellipsis; /* Agrega "..." para texto largo */
+  }
+  
+  /* Botón */
+  .cardProyectos .btn-primary {
+    background-color: #DA4167; /* Color del botón */
+    border: none;
+    padding: 10px 15px; /* Tamaño del botón */
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cardProyectos .btn-primary:hover {
+    background-color: #F76C8A; /* Color al pasar el ratón */
+  }
+  

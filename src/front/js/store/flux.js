@@ -1,54 +1,59 @@
-const getState = ({ getStore, getActions, setStore }) => {
+const getState = ({ getStore, setStore }) => {
 	return {
-		store: {
-			message: null,
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+	  store: {
+		formulario: {
+		  nombre: "",
+		  email: "",
+		  contenido: "",
 		},
-		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
+		message: null, // Mensaje de respuesta a un error o exito... aparece dentro de un div. Si es null o cadena vacial, no se renderiza nada.
+	  },
+  
+	  actions: {
 
-			getMessage: async () => {
-				try{
-					// fetching data from the backend
-					const resp = await fetch(process.env.BACKEND_URL + "/api/hello")
-					const data = await resp.json()
-					setStore({ message: data.message })
-					// don't forget to return something, that is how the async resolves
-					return data;
-				}catch(error){
-					console.log("Error loading message from backend", error)
-				}
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
+		// Acción para actualizar los valores del formulario
+		actualizarFormulario: ({ name, value }) => {
+			const store = getStore(); // Obtén el estado actual
+			setStore({
+			  formulario: {
+				...store.formulario,
+				[name]: value, // Actualiza el campo específico
+			  },
+			});
+		  },
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
+
+		// Enviar formulario a la API (esto sigue siendo parte del estado global) Si la respuesta es exitosa, actualiza el mensaje de éxito en el estado global y limpia el formulario.
+		enviarEmail: async () => {
+			const { formulario } = getStore(); // Obtenemos el estado actual del formulario
+			try {
+			  const backendUrl = process.env.REACT_APP_BACKEND_URL; // accederá al valor guardado en el archivo .env
+			  console.log("Backend URL:", backendUrl); // Verifica el valor de la URL
+			  
+			 
+			  const response = await fetch(`${backendUrl}/api/enviarEmail`, {
+				method: "POST",
+				headers: {
+				  "Content-Type": "application/json",
+				},
+				body: JSON.stringify(formulario), // Enviamos los datos del formulario al backend
+			  });
+		  
+			  if (response.ok) {
+				setStore({ message: "Mensaje enviado correctamente" });
+				setStore({
+				  formulario: { nombre: "", email: "", contenido: "" },
 				});
-
-				//reset the global store
-				setStore({ demo: demo });
+			  } else {
+				setStore({ message: "Hubo un problema al enviar el mensaje" });
+			  }
+			} catch (error) {
+			  setStore({ message: `Error: ${error.message}` });
 			}
-		}
+		},		  
+	  },
 	};
-};
-
-export default getState;
+  };
+  
+  export default getState;
+  

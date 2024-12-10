@@ -1,0 +1,25 @@
+/* footer.css */
+
+/* Estilo base para el footer */
+.footer {
+    background-color: #222;  /* Fondo oscuro */
+    color: #ccc;             /* Texto gris claro */
+    text-align: center;      /* Centrado de los elementos */
+    padding: 20px;           /* Espaciado alrededor */
+    position: relative;      /* Asegura que esté al final de la página */
+    bottom: 0;
+    width: 100%;
+    font-size: 16px;         /* Tamaño del texto */
+  }
+  
+  /* Estilo para el texto del footer */
+  .footer p {
+    margin: 0;               /* Elimina el margen por defecto */
+    font-size: 14px;         /* Tamaño pequeño para el texto del copyright */
+  }
+
+  /* Hacer que el .rr de lois.rr tenga color #DA4167 y aplicar el difuminado */
+  .footer p span {
+    color: #DA4167;            /* Color para el .rr */
+    text-shadow: 0 0 10px rgba(218, 65, 103, 0.8), 0 0 15px rgba(218, 65, 103, 0.6); /* Efecto difuminado */
+  }

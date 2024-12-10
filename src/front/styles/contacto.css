@@ -1,0 +1,97 @@
+/* Global styles for Contact Section */
+.contacto-section {
+    font-family: 'Poppins', sans-serif;
+    padding: 50px 20px; /* Ajusta espacio arriba y abajo */
+    background-color: #08090A;
+    color: #66D7D1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px; /* Separación entre elementos dentro de la sección */
+  }
+  
+  /* Title Styles */
+  .contacto-section h2 {
+    font-size: 76.8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .contacto-section h2:hover {
+    color: #FF99B2; /* Cambio de color suave */
+  }
+  
+  /* Form Styles */
+  form {
+    width: 100%;
+    max-width: 600px; /* Limita el ancho del formulario */
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Label and Input Styles */
+  .formulario-label {
+    font-size: 18px;
+    color: #DA4167;
+    margin-bottom: 10px;
+    
+  }
+  
+  .formulario-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #1E1F21; /* Fondo oscuro */
+    border: 1px solid #66D7D1;
+    color: #FFFFFF;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .formulario-control:focus {
+    border-color: #FF99B2; /* Resalta el borde al hacer foco */
+    outline: none;
+  }
+  
+  
+  /* Button Styles */
+  .btn-contacto {
+    width: 100%;
+    padding: 12px;
+    background-color: #DA4167;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-contacto:hover {
+    background-color: #FF99B2; /* Color suave al pasar el ratón */
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .contacto-section h2 {
+      font-size: 48px; /* Reduce el tamaño del título en pantallas pequeñas */
+    }
+  
+    .formulario-label {
+      font-size: 16px;
+    }
+  
+    .formulario-control {
+      font-size: 14px;
+    }
+  
+    .btn-contacto {
+      font-size: 16px;
+    }
+  }
+  
