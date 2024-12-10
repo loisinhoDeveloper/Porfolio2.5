@@ -28,6 +28,13 @@ body {
     text-align: left;
     letter-spacing: normal;
     margin-bottom: 20px;
+    color: white;
+
+}
+/* Estilo para el subtítulo */
+.intro h1 span {
+    color: #DA4167; /* Color del texto */
+    text-shadow: 0 0 10px rgba(218, 65, 103, 0.8), 0 0 15px rgba(218, 65, 103, 0.6); /* Efecto de sombra */
 }
 
 /* Estilo para el subtítulo */
@@ -38,7 +45,6 @@ body {
     text-align: left;
     letter-spacing: normal;
     color: #DA4167; /* Color del texto */
-    text-shadow: 0 0 10px rgba(218, 65, 103, 0.8), 0 0 15px rgba(218, 65, 103, 0.6); /* Efecto de sombra */
 }
 
 /* Estilo para los párrafos de introducción */
@@ -50,12 +56,12 @@ body {
     letter-spacing: normal;
     max-width: 600px;
     margin: 0 auto;
+    color: white;
 }
 
 /* Estilo para las etiquetas de texto especiales dentro de los párrafos */
 .intro p span {
     color: #DA4167;
-    text-shadow: 0 0 10px rgba(218, 65, 103, 0.8), 0 0 15px rgba(218, 65, 103, 0.6);
     font-family: 'Poppins', sans-serif;
     font-size: 33.6px;
 }
@@ -97,10 +103,11 @@ body {
 
 /* Efecto para el botón al hacer hover */
 .contact-btn:hover {
-    background-color: #50B6B0; /* Cambia el color de fondo al pasar el ratón */
-    transform: scale(1.1); /* Aumenta el tamaño del botón */
-    box-shadow: 0 0 15px rgba(102, 215, 209, 0.6); /* Agrega una sombra para dar un efecto de resplandor */
+    background-color: #F76C8A;
+    transform: scale(1.1);
+    transition: transform 0.2s, background-color 0.3s;
 }
+
 
 /* Estilo para la imagen de la intro */
 .intro-image img {

@@ -8,8 +8,7 @@ import { SiFlask, SiStripe } from "react-icons/si";
 
 
 export const Skills = () => {
-  const refTitulo = useRef(null);
-  const refIconos = useRef([]);
+  
 
   const skills = [
     { titulo: "HTML", descripcion: "Lenguaje de estructuración web.", nivel: "Intermedio", icono: <FaHtml5 /> },
@@ -23,6 +22,10 @@ export const Skills = () => {
     ];
 
 
+ const refTitulo = useRef(null);
+ const refIconos = skills.map(() => useRef(null)); // cada ícono tiene su propia referencia. 
+  //Al usar map() para crear una referencia (useRef(null)) para cada uno de los íconos que hay en el array skills
+
   const animarTitulo = () => {
     gsap.to(refTitulo.current, { scale: 1.2, duration: 0.3 });
   };
@@ -32,11 +35,11 @@ export const Skills = () => {
   };
 
   const animarIcono = (index) => {
-    gsap.to(refIconos.current[index], { scale: 1.2, duration: 0.3, color: "#FF99B2" });
+    gsap.to(refIconos[index].current, { scale: 1.2, duration: 0.3, color: "#FF99B2" });
   };
 
   const devolverIcono = (index) => {
-    gsap.to(refIconos.current[index], { scale: 1, duration: 0.3, color: "#DA4167" });
+    gsap.to(refIconos[index].current, { scale: 1, duration: 0.3, color: "#DA4167" });
   };
 
   return (
@@ -57,7 +60,7 @@ export const Skills = () => {
             className="skill-card"
             onMouseEnter={() => animarIcono(index)}
             onMouseLeave={() => devolverIcono(index)}
-            ref={(el) => (refIconos.current[index] = el)}
+            ref={refIconos[index]}// Usamos la referencia individual
           >
             <div className="icon">{skill.icono}</div>
             <h3>{skill.titulo}</h3>

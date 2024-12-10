@@ -71,7 +71,7 @@ export const Educacion = () => {
           <div className="timeline-circle"></div>
         </div>
         {activeInfo === 1 && (
-          <div className="timeline-component timeline-left timeline-component-1">
+          <div className="timeline-component timeline-left timeline-component-1 active">
             <h3>Bootcamp Full Stack Developer</h3>
             <p>Septiembre 2024</p>
           </div>
@@ -88,7 +88,7 @@ export const Educacion = () => {
           <div className="timeline-circle"></div>
         </div>
         {activeInfo === 2 && (
-          <div className="timeline-component timeline-right timeline-component-2">
+          <div className="timeline-component timeline-right timeline-component-2 active">
             <h3>Formador de Formadores E-learning</h3>
             <p>Enero 2024</p>
           </div>
@@ -105,7 +105,7 @@ export const Educacion = () => {
           <div className="timeline-circle"></div>
         </div>
         {activeInfo === 3 && (
-          <div className="timeline-component timeline-left-2 timeline-component-3">
+          <div className="timeline-component timeline-left-2 timeline-component-3 active">
             <h3>Curso Oficial de Coordinación de Tiempo Libre</h3>
             <p>Enero 2021</p>
           </div>
@@ -122,7 +122,7 @@ export const Educacion = () => {
           <div className="timeline-circle"></div>
         </div>
         {activeInfo === 4 && (
-          <div className="timeline-component timeline-right-2 timeline-component-4">
+          <div className="timeline-component timeline-right-2 timeline-component-4 active">
             <h3>Grado en Educación Infantil</h3>
             <p>Septiembre 2014 - USC</p>
           </div>

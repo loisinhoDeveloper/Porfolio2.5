@@ -21,7 +21,7 @@ export const Home = () => {
         {/* Sección Home: Introducción y experiencia */}
         <section id="home" className="intro">
           <div className="intro-text">
-            <h1>¡Hola! Soy Lois</h1>
+            <h1>¡Hola! Soy <span>Lois</span></h1>
             <h2><span>Desarrollador Jr Full Stack</span></h2>
             <p>
               Con habilidades en HTML, CSS y JavaScript, así como en frameworks como React. 

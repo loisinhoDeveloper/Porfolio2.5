@@ -57,6 +57,7 @@
   .icon {
     font-size: 50px; /* Tamaño inicial */
     color: #DA4167; /* Color rosa */
+    transition: color 0.3s ease; /* Suaviza el cambio de color */
   }
   
   .icon:hover {
@@ -96,12 +97,26 @@
   /* Responsive Adjustments */
   @media (max-width: 768px) {
     .skills-grid {
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Iconos más pequeños en pantallas pequeñas */
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); /* Reduce aún más el tamaño de las columnas */
+      gap: 20px;
+      width: 80%; /* Ocupa más espacio en pantallas pequeñas */
     }
   
     .skills-section h2 {
-      font-size: 48px; /* Reduce el tamaño del título en pantallas pequeñas */
+      font-size: 6vw; /* Título más pequeño */
+    }
+  
+    .skills-grid {
+      grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); /* Asegura que los iconos tengan suficiente espacio */
+      gap: 15px;
+    }
+  
+    .skill-card {
+      padding: 15px; /* Menos padding en pantallas pequeñas */
+    }
+  
+    .icon {
+      font-size: 40px; /* Reduce el tamaño de los iconos */
     }
   }
   

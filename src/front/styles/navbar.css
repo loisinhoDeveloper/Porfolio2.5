@@ -17,6 +17,7 @@
     transition: transform 0.3s ease; /* Transición suave al pasar el ratón */
     font-family: 'Poppins', sans-serif; /* Fuente Poppins */
     font-size: 33.6px;                 /* Tamaño del texto */
+    color:white;
   }
   
   /* Hacer que el .rr de lois.rr tenga color #DA4167 y aplicar el difuminado */
@@ -65,4 +66,41 @@
     text-decoration: underline; /* Subrayar el texto */
     color: #DA4167;            /* Asegurar que el color cambie */
   }
-  
+
+  @media (max-width: 768px) {
+    .navbar {
+        margin-left: 20px;
+        margin-right: 20px;
+        flex-direction: column; /* Apila los elementos */
+        align-items: center;
+    }
+
+    .linksHome {
+        flex-direction: column; /* Apila los enlaces */
+        gap: 10px;              /* Reduce el espacio entre ellos */
+    }
+}
+
+@media (max-width: 768px) {
+  .intro {
+      flex-direction: column; /* Apila el texto e imagen */
+      text-align: center;    /* Centra los textos */
+  }
+
+  .intro-text {
+      max-width: 100%; /* Ocupa todo el ancho */
+      margin: 0;       /* Elimina el margen lateral */
+  }
+
+  .intro-image img {
+      max-width: 60%; /* Ajusta el tamaño de la imagen */
+  }
+
+  .intro h1 {
+      font-size: 40px; /* Reduce el tamaño del título */
+  }
+
+  .intro h2 {
+      font-size: 24px; /* Reduce el tamaño del subtítulo */
+  }
+}
