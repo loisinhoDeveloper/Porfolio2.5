@@ -2,24 +2,36 @@
 
 /* Estilo base para el footer */
 .footer {
-    background-color: #222;  /* Fondo oscuro */
-    color: #ccc;             /* Texto gris claro */
+    background-color: #08090A; /* Fondo oscuro */
+    
     text-align: center;      /* Centrado de los elementos */
     padding: 20px;           /* Espaciado alrededor */
     position: relative;      /* Asegura que esté al final de la página */
     bottom: 0;
     width: 100%;
     font-size: 16px;         /* Tamaño del texto */
+    justify-content: space-between; /* Distribuye el contenido (como el logo y los links) */
+    align-items: center;       /* Alinea verticalmente los elementos */
+  }
+
+  .footer-logo {
+    height: 60px; /* Ajusta el tamaño según necesites */
+    width: auto; /* Mantiene la proporción */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: transform 0.3s ease; /* Efecto suave */
+  }
+
+  .footer-logo:hover {
+    transform: scale(1.1); /* Zoom al pasar el ratón */
   }
   
   /* Estilo para el texto del footer */
   .footer p {
     margin: 0;               /* Elimina el margen por defecto */
     font-size: 14px;         /* Tamaño pequeño para el texto del copyright */
+    color: #FF99B2;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200; /* Montserrat ExtraLight 200 */
   }
 
-  /* Hacer que el .rr de lois.rr tenga color #DA4167 y aplicar el difuminado */
-  .footer p span {
-    color: #DA4167;            /* Color para el .rr */
-    text-shadow: 0 0 10px rgba(218, 65, 103, 0.8), 0 0 15px rgba(218, 65, 103, 0.6); /* Efecto difuminado */
-  }
+  
