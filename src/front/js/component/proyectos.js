@@ -106,7 +106,7 @@ export const Proyectos = () => {
                   rel="noopener noreferrer"
                   className="btn btn-primary"
                 >
-                  Ver proyecto
+                  Proyecto
                 </a>
               </div>
             </div>

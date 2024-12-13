@@ -41,7 +41,7 @@ export const Home = () => {
                 <FaLinkedin size={30} />
               </a>
               <button className="contact-btn" onClick={() => document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' })}>
-                contáctame
+                Contáctame
               </button>
             </div>
           </div>

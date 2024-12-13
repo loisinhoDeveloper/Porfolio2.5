@@ -2,7 +2,7 @@ import os
 from flask import Flask, send_from_directory, jsonify
 from flask_migrate import Migrate
 from flask_mail import Mail  # Clase Mail para inicialización
-from dotenv import load_dotenv
+from dotenv import load_dotenv # Sirve para cargar y gestionar variables de entorno desde un archivo .env en proyectos de Python, como en tu caso con Flask
 from api.utils import APIException, generate_sitemap
 from api.models import db
 from api.admin import setup_admin

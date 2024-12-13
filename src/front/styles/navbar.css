@@ -9,22 +9,22 @@
     align-items: center;       /* Alinea verticalmente los elementos */
     margin-left: 172px;        /* Margen izquierdo de 172px */
     margin-right: 172px;       /* Margen derecho de 172px */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200; /* Montserrat ExtraLight 200 */
+    
   }
   
-  /* Estilo para el título */
-  .navbar h1 {
-    margin: 0;                 /* Quitar márgenes por defecto */
-    transition: transform 0.3s ease; /* Transición suave al pasar el ratón */
-    font-family: 'Poppins', sans-serif; /* Fuente Poppins */
-    font-size: 33.6px;                 /* Tamaño del texto */
-    color:white;
+  .navbar-logo {
+    height: 120px; /* Ajusta el tamaño según necesites */
+    width: auto; /* Mantiene la proporción */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: transform 0.3s ease; /* Efecto suave */
   }
-  
-  /* Hacer que el .rr de lois.rr tenga color #DA4167 y aplicar el difuminado */
-  .navbar h1 span {
-    color: #DA4167;            /* Color para el .rr */
-    text-shadow: 0 0 10px rgba(218, 65, 103, 0.8), 0 0 15px rgba(218, 65, 103, 0.6); /* Efecto difuminado */
+
+  .navbar-logo:hover {
+    transform: scale(1.1); /* Zoom al pasar el ratón */
   }
+
   
   /* Efecto al pasar el ratón por encima */
   .navbar h1:hover {
@@ -41,9 +41,10 @@
   
   /* Estilo para los links dentro de linksHome */
   .linksHome {
-    color: #66D7D1;            /* Color de texto de los links */
+    color: #23b6be;            /* Color de texto de los links */
     display: flex;             /* Utilizamos Flexbox para alinear los enlaces */
-    gap: 38px;                 /* Espaciado entre los enlaces */
+    gap: 30px;                 /* Espaciado entre los enlaces */
+    
   }
   
   /* Añadir espacio de 401px entre el logo y los enlaces */
@@ -53,11 +54,12 @@
   
   /* Estilo de los enlaces dentro de linksHome */
   .linksHome a {
-    color: #66D7D1;            /* Color de los enlaces */
+    color: #23b6be;            /* Color de los enlaces */
     text-decoration: none;     /* Quitar subrayado */
-    margin: 0 15px;            /* Espaciado entre los enlaces */
-    font-size: 16px;           /* Tamaño del texto */
+    margin: 0 10px;            /* Espaciado entre los enlaces */
+    font-size: 18px;           /* Tamaño del texto */
     transition: transform 0.3s ease, color 0.3s ease; /* Transición suave para el zoom y el color */
+    
   }
   
   /* Efecto al pasar el ratón por encima de los links */

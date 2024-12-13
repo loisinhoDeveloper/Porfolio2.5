@@ -11,7 +11,7 @@ export const Skills = () => {
   
 
   const skills = [
-    { titulo: "HTML", descripcion: "Lenguaje de estructuración web.", nivel: "Intermedio", icono: <FaHtml5 /> },
+    { titulo: "HTML", descripcion: "Estructuración web.", nivel: "Intermedio", icono: <FaHtml5 /> },
     { titulo: "CSS", descripcion: "Estilos y diseño visual.", nivel: "Intermedio", icono: <FaCss3Alt /> },
     { titulo: "JavaScript", descripcion: "Lenguaje de programación.", nivel: "En proceso de consolidación", icono: <FaJs /> },
     { titulo: "React", descripcion: "Framework frontend.", nivel: "Nivel inicial sólido", icono: <FaReact /> },

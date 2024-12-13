@@ -24,15 +24,16 @@
 }
 
 .proyectos-section {
-  font-family: 'Poppins', sans-serif;
+  
   padding: 50px 20px;
   background-color: #08090A;
-  color: #66D7D1;
+  color: #23b6be;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+
 }
 
 .proyectos-section h2 {
@@ -42,6 +43,9 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200; /* Montserrat ExtraLight 200 */
+  text-shadow: 0 0 10px rgba(35, 182, 190, 1), 0 0 15px rgba(35, 182, 190, 0.6);
 }
 
 /* Ajustes responsivos para las tarjetas */
@@ -66,37 +70,48 @@
 /* Estilo para el título del proyecto */
 .cardProyectos h3 {
   font-size: 18px;
-  font-weight: bold;
   color: #DA4167;
   margin: 10px 0;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200; /* Montserrat ExtraLight 200 */
 }
 
 /* Estilo para la descripción */
 .cardProyectos p {
-  font-size: 14px;
-  color: #ffffff;
-  line-height: 1.5;
-  margin: 0 0 10px;
+  font-size: 12px;
+  color: #B0B0B0; /* Gris claro */
+  line-height: 1.8;
+  margin: 0 0 30px;
   text-align: justify;
-  max-height: 3em;
+  max-height: 8em;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300; /* Especificar el peso de la fuente Light 300 */
 }
 
 /* Estilo para los botones */
 .cardProyectos .btn-primary {
-  background-color: #DA4167;
+  background-color: #23b6be; /* Color de fondo */
+  color: white;
+  padding: 12px 16px; /* Tamaño del botón */
   border: none;
-  padding: 10px 15px;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
+  border-radius: 50px; /* Hacemos el botón redondo */
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 10px;
+  font-family: "Dancing Script", cursive;  /* Cambiar Corinthia por Dancing Script */
+  font-weight: 400;  /* O cualquier peso que prefieras dentro de 400-700 */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Añadimos transición para los efectos */
 }
 
 .cardProyectos .btn-primary:hover {
   background-color: #F76C8A;
+  
+  
 }
 
 /* Media queries para pantallas más pequeñas */

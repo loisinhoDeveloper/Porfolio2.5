@@ -3,7 +3,7 @@
     font-family: 'Poppins', sans-serif;
     padding: 50px 20px; /* Ajusta espacio arriba y abajo */
     background-color: #08090A;
-    color: #66D7D1;
+    color: #23b6be;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,6 +18,9 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200; /* Montserrat ExtraLight 200 */
+    text-shadow: 0 0 10px rgba(35, 182, 190, 1), 0 0 15px rgba(35, 182, 190, 0.6);
   }
   
   .contacto-section h2:hover {
@@ -39,6 +42,8 @@
     font-size: 18px;
     color: #DA4167;
     margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200; /* Montserrat ExtraLight 200 */
     
   }
   
@@ -47,10 +52,13 @@
     padding: 10px;
     margin-bottom: 20px;
     background-color: #1E1F21; /* Fondo oscuro */
-    border: 1px solid #66D7D1;
+    border: 1px solid #23b6be;
     color: #FFFFFF;
     font-size: 16px;
     border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300; /* Especificar el peso de la fuente Light 300 */
+
   }
   
   .formulario-control:focus {
@@ -61,15 +69,17 @@
   
   /* Button Styles */
   .btn-contacto {
-    width: 100%;
-    padding: 12px;
-    background-color: #DA4167;
-    color: white;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: #23b6be; /* Color de fondo */
+  color: white;
+  padding: 12px 16px; /* Tamaño del botón */
+  border: none;
+  border-radius: 50px; /* Hacemos el botón redondo */
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 10px;
+  font-family: "Dancing Script", cursive;  /* Cambiar Corinthia por Dancing Script */
+  font-weight: 400;  /* O cualquier peso que prefieras dentro de 400-700 */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Añadimos transición para los efectos */
   }
   
   .btn-contacto:hover {

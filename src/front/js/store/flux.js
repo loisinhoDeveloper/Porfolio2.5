@@ -28,7 +28,7 @@ const getState = ({ getStore, setStore }) => {
 			const { formulario } = getStore(); // Obtenemos el estado actual del formulario
 			try {
 			  const backendUrl = process.env.REACT_APP_BACKEND_URL; // accederá al valor guardado en el archivo .env
-			  console.log("Backend URL:", backendUrl); // Verifica el valor de la URL
+			  console.log("Backend URL:", process.env.REACT_APP_BACKEND_URL); // Verifica el valor de la URL
 			  
 			 
 			  const response = await fetch(`${backendUrl}/api/enviarEmail`, {

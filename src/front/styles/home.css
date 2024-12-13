@@ -2,6 +2,7 @@ body {
     background-color: #08090A; /* Fondo oscuro en todo el body */
     margin: 0; /* Aseguramos que no haya márgenes por defecto */
     padding: 0; /* Aseguramos que no haya relleno por defecto */
+    
 }
 
 /* Estilo para el contenedor principal */
@@ -9,7 +10,7 @@ body {
     display: flex;                  /* Usamos Flexbox para alinear los elementos */
     justify-content: space-between;  /* Separa el texto a la izquierda y la imagen a la derecha */
     align-items: center;             /* Centra verticalmente los elementos */
-    padding: 125px 20px 96px 172px;  /* Margen superior de 125px, margen izquierdo de 172px, margen derecho de 20px y margen inferior de 96px */
+    padding: 50px 20px 96px 172px;  /* Margen superior de 125px, margen izquierdo de 172px, margen derecho de 20px y margen inferior de 96px */
     background-color: #08090A;       /* Fondo oscuro */
     color: white;                    /* Color blanco para el texto */
 }
@@ -18,28 +19,34 @@ body {
 .intro-text {
     max-width: 50%;                 /* El texto ocupa la mitad del espacio */
     margin-right: 20px;             /* Espacio entre la imagen y el texto */
+    
 }
 
 /* Estilo para el título principal */
-.intro h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 67.2px;
-    line-height: 67.2px;
+.intro-text h1 {
+    font-family: "Dancing Script", cursive;  /* Cambiar Corinthia por Dancing Script */
+    font-weight: 400;  /* O cualquier peso que prefieras dentro de 400-700 */
+    font-style: normal;
+    font-size: 78px;
+    line-height: 95px;
     text-align: left;
     letter-spacing: normal;
-    margin-bottom: 20px;
-    color: white;
-
+    margin-bottom: 30px;
+    color: #B0B0B0; /* Gris claro */
+    
 }
+
 /* Estilo para el subtítulo */
 .intro h1 span {
     color: #DA4167; /* Color del texto */
-    text-shadow: 0 0 10px rgba(218, 65, 103, 0.8), 0 0 15px rgba(218, 65, 103, 0.6); /* Efecto de sombra */
+    
 }
+
 
 /* Estilo para el subtítulo */
 .intro h2 span {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200; /* Montserrat ExtraLight 200 */
     font-size: 33.6px;
     line-height: normal;
     text-align: left;
@@ -47,23 +54,35 @@ body {
     color: #DA4167; /* Color del texto */
 }
 
+
 /* Estilo para los párrafos de introducción */
 .intro p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 19.2px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300; /* Especificar el peso de la fuente Light 300 */
+    font-size: 20px;
     line-height: 34.56px;
     text-align: justify;
     letter-spacing: normal;
     max-width: 600px;
     margin: 0 auto;
-    color: white;
+    color: #B0B0B0; /* Gris claro */
+    
 }
 
 /* Estilo para las etiquetas de texto especiales dentro de los párrafos */
 .intro p span {
     color: #DA4167;
-    font-family: 'Poppins', sans-serif;
     font-size: 33.6px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200; /* Montserrat ExtraLight 200 */
+    text-shadow: 0 0 10px rgba(218, 65, 103, 0.8), 0 0 15px rgba(218, 65, 103, 0.6); /* Efecto de sombra */
+    
+}
+
+/* Estilo para el subtítulo */
+.intro h2 span {
+    color: #DA4167; /* Color del texto */
+    text-shadow: 0 0 10px rgba(218, 65, 103, 0.8), 0 0 15px rgba(218, 65, 103, 0.6); /* Efecto de sombra */
 }
 
 /* Estilo para los iconos de redes sociales */
@@ -90,14 +109,16 @@ body {
 
 /* Estilo para el botón de contacto */
 .contact-btn {
-    background-color: #66D7D1; /* Color de fondo */
+    background-color: #23b6be; /* Color de fondo */
     color: white;
     padding: 15px 20px; /* Tamaño del botón */
     border: none;
     border-radius: 50px; /* Hacemos el botón redondo */
     cursor: pointer;
-    font-size: 16px;
+    font-size: 20px;
     margin-top: 10px;
+    font-family: "Dancing Script", cursive;  /* Cambiar Corinthia por Dancing Script */
+    font-weight: 400;  /* O cualquier peso que prefieras dentro de 400-700 */
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Añadimos transición para los efectos */
 }
 
