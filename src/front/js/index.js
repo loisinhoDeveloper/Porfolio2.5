@@ -2,6 +2,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+
 //fuente corinthia instalada con $ npm install @fontsource/corinthia
 import "@fontsource/corinthia"; // Peso normal
 import "@fontsource/corinthia/700.css"; // Negrita

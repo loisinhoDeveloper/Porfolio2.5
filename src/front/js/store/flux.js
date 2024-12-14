@@ -10,50 +10,39 @@ const getState = ({ getStore, setStore }) => {
 	  },
   
 	  actions: {
-
-		// Acción para actualizar los valores del formulario
+		// Actualiza los valores del formulario en el estado global
 		actualizarFormulario: ({ name, value }) => {
-			const store = getStore(); // Obtén el estado actual
-			setStore({
-			  formulario: {
-				...store.formulario,
-				[name]: value, // Actualiza el campo específico
-			  },
-			});
-		  },
+		  const store = getStore();
+		  setStore({
+			formulario: {
+			  ...store.formulario,
+			  [name]: value,
+			},
+		  });
+		},
 
-
-		// Enviar formulario a la API (esto sigue siendo parte del estado global) Si la respuesta es exitosa, actualiza el mensaje de éxito en el estado global y limpia el formulario.
-		enviarEmail: async () => {
-			const { formulario } = getStore(); // Obtenemos el estado actual del formulario
+		// Acción para manejar el envío de email
+		enviarEmail: async (formulario) => {
 			try {
-			  const backendUrl = process.env.REACT_APP_BACKEND_URL; // accederá al valor guardado en el archivo .env
-			  console.log("Backend URL:", process.env.REACT_APP_BACKEND_URL); // Verifica el valor de la URL
-			  
-			 
-			  const response = await fetch(`${backendUrl}/api/enviarEmail`, {
-				method: "POST",
-				headers: {
-				  "Content-Type": "application/json",
-				},
-				body: JSON.stringify(formulario), // Enviamos los datos del formulario al backend
-			  });
-		  
-			  if (response.ok) {
+			  const response = await emailjs.send(
+				'service_2p0ee1f',  // ID de tu servicio de EmailJS
+				'template_m80odf1',  // ID de tu plantilla de EmailJS
+				formulario,          // Los datos del formulario
+				'b304yeqAN6dPuVE9b'    // Tu clave pública de EmailJS
+			  );
+	
+			  if (response.status === 200) {
 				setStore({ message: "Mensaje enviado correctamente" });
-				setStore({
-				  formulario: { nombre: "", email: "", contenido: "" },
-				});
+				setStore({ formulario: { nombre: "", email: "", contenido: "" } });
 			  } else {
-				setStore({ message: "Hubo un problema al enviar el mensaje" });
+				setStore({ message: "Hubo un error al enviar el mensaje" });
 			  }
 			} catch (error) {
-			  setStore({ message: `Error: ${error.message}` });
+			  setStore({ message: `Error al enviar el mensaje: ${error.message}` });
 			}
-		},		  
-	  },
+		  },
+	   },
 	};
-  };
-  
-  export default getState;
-  
+};
+	
+export default getState;

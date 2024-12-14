@@ -1,16 +1,28 @@
-import React, { useContext, useRef } from "react";  //Este hook nos permite acceder al estado global y a las acciones definidas en el archivo de Flux.
+import React, { useContext, useRef, useEffect } from "react";  //Este hook nos permite acceder al estado global y a las acciones definidas en el archivo de Flux.
 import { Context } from "../store/appContext"; // Importamos el contexto de Flux
 import "../../styles/contacto.css";
 import Lottie from 'lottie-react';
 import animacionContacto from "../../../assets/iconos/mail.json";
 import { gsap } from "gsap";
+import emailjs from '@emailjs/browser';
+
+
+
 
 
 
 export const Contacto = () => {
+  
   const { store, actions } = useContext(Context);
   // Usamos el contexto de Flux para importar las acciones y variables
   const refTitulo = useRef(null); // useRef para crear ese marcador (referencia) le dice a React: "Marca este lugar, pero al principio no lo necesitamos (null). Más adelante, lo usaremos cuando React dibuje la página."
+
+  // Inicializar EmailJS
+  useEffect(() => {
+    emailjs.init("b304yeqAN6dPuVE9b"); // Sustituye "YOUR_PUBLIC_KEY" con tu clave pública real
+  }, []);
+
+
 
   // Función handleChange, para que cuando el usuario escribe algo en un campo del formulario, esta función se ejecuta.
   const handleChange = (e) => {
@@ -19,10 +31,17 @@ export const Contacto = () => {
     actions.actualizarFormulario({ name, value }); // Usamos la acción para actualizar el estado del formulario cuando escribimos.
   };
 
-  // Esta función se ejecuta cuando el formulario se envía, es decir cuando le damos al botón.
+  /// Maneja el envío del formulario
   const handleSubmit = (e) => {
-    e.preventDefault(); // Evita el comportamiento por defecto (recarga de página)
-    actions.enviarEmail(); //acción de enviar, en el formulario del flux.js y envia datos API (flux)
+    e.preventDefault();
+    const { nombre, email, contenido } = store.formulario;
+    const formulario = {
+      to_name: "Soporte", 
+      from_name: nombre,
+      email: email,
+      message: contenido,
+    };
+    actions.enviarEmail(formulario);  // Llama a la acción de enviar el correo
   };
 
   const animarTitulo = () => {
