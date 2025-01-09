@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useEffect } from "react";  //Este hook nos permite acceder al estado global y a las acciones definidas en el archivo de Flux.
+import React, { useContext, useRef,  } from "react";  //Este hook nos permite acceder al estado global y a las acciones definidas en el archivo de Flux.
 import { Context } from "../store/appContext"; // Importamos el contexto de Flux
 import "../../styles/contacto.css";
 import Lottie from 'lottie-react';
@@ -7,22 +7,15 @@ import { gsap } from "gsap";
 import emailjs from '@emailjs/browser';
 
 
-
-
-
-
 export const Contacto = () => {
   
   const { store, actions } = useContext(Context);
   // Usamos el contexto de Flux para importar las acciones y variables
   const refTitulo = useRef(null); // useRef para crear ese marcador (referencia) le dice a React: "Marca este lugar, pero al principio no lo necesitamos (null). Más adelante, lo usaremos cuando React dibuje la página."
 
-  // Inicializar EmailJS
-  useEffect(() => {
-    emailjs.init("b304yeqAN6dPuVE9b"); // Sustituye "YOUR_PUBLIC_KEY" con tu clave pública real
-  }, []);
 
-
+  // Asegúrate de inicializar EmailJS correctamente
+  emailjs.init('b304yeqAN6dPuVE9b'); // Tu clave pública
 
   // Función handleChange, para que cuando el usuario escribe algo en un campo del formulario, esta función se ejecuta.
   const handleChange = (e) => {
@@ -31,18 +24,32 @@ export const Contacto = () => {
     actions.actualizarFormulario({ name, value }); // Usamos la acción para actualizar el estado del formulario cuando escribimos.
   };
 
-  /// Maneja el envío del formulario
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const { nombre, email, contenido } = store.formulario;
-    const formulario = {
-      to_name: "Soporte", 
-      from_name: nombre,
-      email: email,
-      message: contenido,
-    };
-    actions.enviarEmail(formulario);  // Llama a la acción de enviar el correo
-  };
+  
+  // Maneja el envío del formulario usando emailjs.sendForm
+ const handleSubmit = (e) => { 
+  e.preventDefault(); // Evita que la página se recargue al enviar el formulario
+
+    const btn = document.getElementById('btn-contacto');
+    btn.value = 'Enviando...'; // Cambiar el valor del botón mientras se envía el email
+
+    const serviceID = 'service_2p0ee1f'; // Usar el ID de tu servicio EmailJS
+    const templateID = 'template_m80odf1'; // ID de tu plantilla EmailJS
+
+    emailjs.sendForm(serviceID, templateID, e.target).then(() => {
+      // Cuando el mensaje se envíe con éxito
+      btn.value = 'Enviar'; // Restablece el texto del botón
+      actions.actualizarMensaje("Mensaje enviado correctamente"); // Muestra el mensaje en la interfaz
+      actions.actualizarFormulario({ name: "from_name", value: "" }); // Limpia el campo nombre
+      actions.actualizarFormulario({ name: "email_id", value: "" }); // Limpia el campo email
+      actions.actualizarFormulario({ name: "mensaje", value: "" }); // Limpia el campo contenido
+    })
+    .catch((err) => {
+      // Si hay un error al enviar el mensaje
+      btn.value = 'Enviar'; // Restablece el texto del botón
+      actions.actualizarMensaje("Hubo un error al enviar el mensaje: " + err.text); // Muestra el error en la interfaz
+      console.error("Error de EmailJS:", err); // Muestra más detalles en la consola
+  });
+ };
 
   const animarTitulo = () => {
     console.log('Animando título');
@@ -72,10 +79,10 @@ export const Contacto = () => {
           <input
             type="text"
             id="nombre"
-            name="nombre"
+            name="from_name"  /* Asegúrate de que coincida con el nombre en el estado de Flux */
             className="formulario-control"
-            value={store.formulario.nombre} // Mostramos el valor del input desde el store
-            onChange={handleChange} /* Cuando el valor cambie, es decir, cada vez que se escriba en el input, actualiza el store.formulario,  ejecutamos handleChange */
+            value={store.formulario.from_name}  /* Aquí accedemos al valor desde el store */
+            onChange={handleChange}  /* Actualiza el estado cuando se escribe */
             required
           />
         </div>
@@ -86,9 +93,9 @@ export const Contacto = () => {
           <input
             type="email"
             id="email"
-            name="email"
+            name="email_id" /* Este debe coincidir con la plantilla de EmailJS */
             className="formulario-control"
-            value={store.formulario.email}
+            value={store.formulario.email_id} /* Aquí accedemos al valor desde el store */
             onChange={handleChange} // Llamamos a handleChange aquí
             required
           />
@@ -99,17 +106,15 @@ export const Contacto = () => {
           </label>
           <textarea
             id="contenido"
-            name="contenido"
+            name="mensaje"  /* Este debe coincidir con la plantilla de EmailJS */
             className="formulario-control"
             rows="4"
-            value={store.formulario.contenido}
-            onChange={handleChange} // Llamamos a handleChange aquí
+            value={store.formulario.mensaje}  /* Aquí accedemos al valor desde el store */
+            onChange={handleChange}
             required
           />
         </div>
-        <button type="submit" className="btn btn-contacto"> {/* Cuando el formulario se envíe, ejecutamos handleSubmit */}
-          Enviar
-        </button>
+        <button type="submit" id="btn-contacto" className="btn btn-contacto">Enviar</button>
       </form>
     </section>
   );

@@ -2,13 +2,12 @@ const getState = ({ getStore, setStore }) => {
 	return {
 	  store: {
 		formulario: {
-		  nombre: "",
-		  email: "",
-		  contenido: "",
+		  from_name: "",    // Correspondiente a 'nombre' en el formulario que a su vez relacionado con la plantilla emailjs
+		  email_id: "",     // Correspondiente a 'email' en el formulario
+		  mensaje: "",      // Correspondiente a 'contenido' en el formulario
 		},
-		message: null, // Mensaje de respuesta a un error o exito... aparece dentro de un div. Si es null o cadena vacial, no se renderiza nada.
+		message: null, // Mensaje de respuesta (null o vacío no se renderiza)
 	  },
-  
 	  actions: {
 		// Actualiza los valores del formulario en el estado global
 		actualizarFormulario: ({ name, value }) => {
@@ -16,33 +15,21 @@ const getState = ({ getStore, setStore }) => {
 		  setStore({
 			formulario: {
 			  ...store.formulario,
-			  [name]: value,
+			  [name]: value,  // Se actualizará el valor correcto según el 'name' del input
 			},
 		  });
 		},
-
-		// Acción para manejar el envío de email
-		enviarEmail: async (formulario) => {
-			try {
-			  const response = await emailjs.send(
-				'service_2p0ee1f',  // ID de tu servicio de EmailJS
-				'template_m80odf1',  // ID de tu plantilla de EmailJS
-				formulario,          // Los datos del formulario
-				'b304yeqAN6dPuVE9b'    // Tu clave pública de EmailJS
-			  );
-	
-			  if (response.status === 200) {
-				setStore({ message: "Mensaje enviado correctamente" });
-				setStore({ formulario: { nombre: "", email: "", contenido: "" } });
-			  } else {
-				setStore({ message: "Hubo un error al enviar el mensaje" });
-			  }
-			} catch (error) {
-			  setStore({ message: `Error al enviar el mensaje: ${error.message}` });
-			}
-		  },
-	   },
+  
+		// Actualiza el mensaje de respuesta
+		actualizarMensaje: (message) => {
+		  const store = getStore();
+		  setStore({
+			message: message,
+		  });
+		}
+	  },
 	};
-};
-	
-export default getState;
+  };
+  
+  export default getState;
+  
