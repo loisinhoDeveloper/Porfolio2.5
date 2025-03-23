@@ -18,7 +18,7 @@ export const Proyectos = () => {
       titulo: "Miolos",
       descripcion: "Una API REST para gestionar notas de forma sencilla.",
       imagen: Miolos,
-      link: "https://github.com/tu-repo/api-notas",
+      link: "https://github.com/loisinhoDeveloper/toDoList2",
     },
     {
       titulo: "ValdoDanzas",
